@@ -18,4 +18,9 @@ public class CategoryController:Controller
         IEnumerable<Category> categoryList = _context.Categories.ToList();
         return View(categoryList);
     }
+
+    public IActionResult Create()
+    {
+        return View();
+    }
 }
