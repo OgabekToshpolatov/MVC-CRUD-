@@ -66,5 +66,29 @@ public class CategoryController:Controller
          return View(obj);
     }
 
+    public IActionResult Delete(int? id)
+    {
+        if(id == null || id ==0)
+        {
+            return NotFound();
+        }
+        var categoryId = _context.Categories.Find(id);
+        if(categoryId is null ) return NotFound();
+        return View(categoryId);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public IActionResult DeletePost(int? id)
+    {
+        var obj = _context.Categories.Find(id);
+
+        if(obj == null) return NotFound();
+        
+        _context.Categories.Remove(obj);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
     
 }
