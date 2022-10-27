@@ -78,7 +78,7 @@ public class CategoryController:Controller
         if(categoryId is null ) return NotFound();
         return View(categoryId);
     }
-
+     //   hammasi yaxshi akasi 
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     public IActionResult DeletePost(int? id)
@@ -92,6 +92,10 @@ public class CategoryController:Controller
          TempData["success"] = "Category deleted successfully";
         return RedirectToAction("Index");
     }
-
+     //   hammasi yaxshi akasi 
+     //   hammasi yaxshi akasi 
+     //   hammasi yaxshi akasi 
+     //   hammasi yaxshi akasi 
+     //   hammasi yaxshi akasi 
     
 }
