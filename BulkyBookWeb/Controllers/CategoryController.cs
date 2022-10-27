@@ -35,6 +35,7 @@ public class CategoryController:Controller
          {
             _context.Categories.Add(obj);
             _context.SaveChanges();
+             TempData["success"] = "Category created successfully";
             return RedirectToAction("Index");
          }
          return View(obj);
@@ -61,6 +62,7 @@ public class CategoryController:Controller
          {
             _context.Categories.Update(obj);
             _context.SaveChanges();
+             TempData["success"] = "Category updated successfully";
             return RedirectToAction("Index");
          }
          return View(obj);
@@ -87,6 +89,7 @@ public class CategoryController:Controller
         
         _context.Categories.Remove(obj);
         _context.SaveChanges();
+         TempData["success"] = "Category deleted successfully";
         return RedirectToAction("Index");
     }
 
